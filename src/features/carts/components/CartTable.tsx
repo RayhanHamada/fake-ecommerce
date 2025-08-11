@@ -34,14 +34,14 @@ export default function CartTable(props: Props) {
   const { data: cartDatas } = $api.useQuery("get", "/carts");
   const sortedCartDatas = cartDatas
     ?.sort((a, b) =>
-      // @ts-expect-error
+      // @ts-expect-error date should exists
       dayjs(b.date).diff(dayjs(a.date))
     )
     .filter(
       (cart) =>
-        // @ts-expect-error
+        // @ts-expect-error date should exists
         dayjs(cart.date, "YYYY-MM-DD").isAfter(dateFrom) &&
-        // @ts-expect-error
+        // @ts-expect-error date should exists
         dayjs(cart.date, "YYYY-MM-DD").isBefore(dateTo)
     );
   const totalPages = Math.ceil((sortedCartDatas?.length || 0) / 5);
