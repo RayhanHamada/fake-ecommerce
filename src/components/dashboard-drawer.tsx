@@ -12,7 +12,7 @@ import {
   Button,
   Drawer,
 } from "@mui/material";
-import { Home, ShoppingCart, Logout } from "@mui/icons-material";
+import { ShoppingCart, Logout } from "@mui/icons-material";
 import Link from "next/link";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { LOCAL_STORAGE_KEYS } from "@/lib/constants";
@@ -48,19 +48,6 @@ export default function DashboardDrawer() {
           <List>
             <ListItem
               component={Link}
-              href="/dashboard"
-              sx={{
-                transition: "opacity 0.2s",
-                "&:hover": { opacity: 0.6 },
-              }}
-            >
-              <ListItemIcon>
-                <Home sx={{ color: "#FF5722" }} />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItem>
-            <ListItem
-              component={Link}
               href="/dashboard/carts"
               sx={{
                 transition: "opacity 0.2s",
@@ -80,6 +67,7 @@ export default function DashboardDrawer() {
         <ListItem
           component={Button}
           onClick={handleLogout}
+          size="small"
           sx={{
             transition: "opacity 0.2s",
             "&:hover": { opacity: 0.6 },
@@ -88,7 +76,10 @@ export default function DashboardDrawer() {
           <ListItemIcon>
             <Logout sx={{ color: "#FF5722" }} />
           </ListItemIcon>
-          <ListItemText primary="Logout" />
+          <ListItemText
+            primary="Logout"
+            sx={{ color: "black", textTransform: "capitalize" }}
+          />
         </ListItem>
       </Box>
     </Drawer>

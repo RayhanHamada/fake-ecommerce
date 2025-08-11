@@ -1,13 +1,13 @@
-import { Container, Typography } from "@mui/material";
+"use client";
+
+import { Box, Typography } from "@mui/material";
 
 type Props = Readonly<{}>;
 
-export default function Page(props: Props) {
+export default function Page() {
   return (
-    <Container maxWidth="md" sx={{ py: 8 }}>
-      <Typography variant="h4" component="h1" gutterBottom color="black">
-        Dashboard
-      </Typography>
-    </Container>
+    <Box sx={{ p: 2 }}>
+      <Typography>Dashboard</Typography>
+    </Box>
   );
 }
