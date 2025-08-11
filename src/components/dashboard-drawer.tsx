@@ -1,0 +1,96 @@
+"use client";
+
+import {
+  Box,
+  Toolbar,
+  Typography,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Button,
+  Drawer,
+} from "@mui/material";
+import { Home, ShoppingCart, Logout } from "@mui/icons-material";
+import Link from "next/link";
+import { useLocalStorage } from "@uidotdev/usehooks";
+import { LOCAL_STORAGE_KEYS } from "@/lib/constants";
+
+export default function DashboardDrawer() {
+  const [, setToken] = useLocalStorage(LOCAL_STORAGE_KEYS.TOKEN);
+
+  function handleLogout() {
+    setToken(null);
+  }
+
+  return (
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: 220,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: {
+          width: 220,
+          boxSizing: "border-box",
+          bgcolor: "transparent",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        },
+      }}
+    >
+      <Box>
+        <Toolbar>
+          <Typography>Steven's Store</Typography>
+        </Toolbar>
+        <Box sx={{ overflow: "auto" }}>
+          <List>
+            <ListItem
+              component={Link}
+              href="/dashboard"
+              sx={{
+                transition: "opacity 0.2s",
+                "&:hover": { opacity: 0.6 },
+              }}
+            >
+              <ListItemIcon>
+                <Home sx={{ color: "#FF5722" }} />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItem>
+            <ListItem
+              component={Link}
+              href="/dashboard/carts"
+              sx={{
+                transition: "opacity 0.2s",
+                "&:hover": { opacity: 0.6 },
+              }}
+            >
+              <ListItemIcon>
+                <ShoppingCart sx={{ color: "#FF5722" }} />
+              </ListItemIcon>
+              <ListItemText primary="Carts" />
+            </ListItem>
+          </List>
+          <Divider />
+        </Box>
+      </Box>
+      <Box sx={{ p: 2 }}>
+        <ListItem
+          component={Button}
+          onClick={handleLogout}
+          sx={{
+            transition: "opacity 0.2s",
+            "&:hover": { opacity: 0.6 },
+          }}
+        >
+          <ListItemIcon>
+            <Logout sx={{ color: "#FF5722" }} />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </ListItem>
+      </Box>
+    </Drawer>
+  );
+}

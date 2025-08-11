@@ -1,3 +1,5 @@
+"use client";
+
 import {
   LOGIN_SCHEMA,
   LOGIN_SCHEMA_TYPE,

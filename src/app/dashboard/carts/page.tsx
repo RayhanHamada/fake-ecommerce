@@ -6,7 +6,7 @@ export default function Page(props: Props) {
   return (
     <Container maxWidth="md" sx={{ py: 8 }}>
       <Typography variant="h4" component="h1" gutterBottom color="black">
-        Dashboard
+        Carts
       </Typography>
     </Container>
   );
