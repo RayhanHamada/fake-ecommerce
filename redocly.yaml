@@ -1,0 +1,5 @@
+apis:
+  fakestore@v2.1.10:
+    root: https://fakestoreapi.com/docs-data
+    x-openapi-ts:
+      output: ./src/lib/types/fakestore-openapi.ts

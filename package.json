@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen:api": "openapi-typescript --redocly ./redocly.yaml"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,8 +18,11 @@
     "@tanstack/react-query": "^5.84.2",
     "@tanstack/react-table": "^8.21.3",
     "@toolpad/core": "^0.16.0",
+    "@uidotdev/usehooks": "^2.4.1",
     "next": "15.4.6",
+    "notistack": "^3.0.2",
     "nuqs": "^2.4.3",
+    "openapi-react-query": "^0.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
@@ -32,6 +36,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "openapi-fetch": "^0.14.0",
+    "openapi-typescript": "^7.9.0",
     "typescript": "^5"
   }
 }

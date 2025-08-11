@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import { PropsWithChildren } from "react";
-import GlobalClientProvider from "@/components/GlobalClientProvider";
-import GlobalServerProvider from "@/components/GlobalServerProvider";
+import GlobalClientProvider from "@/components/global-client-provider";
+import GlobalServerProvider from "@/components/global-server-provider";
 
 const roboto = Roboto({
   variable: "--font-roboto",
