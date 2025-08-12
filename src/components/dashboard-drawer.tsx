@@ -42,7 +42,7 @@ export default function DashboardDrawer() {
     >
       <Box>
         <Toolbar>
-          <Typography>Steven's Store</Typography>
+          <Typography>Steven&apos;s Store</Typography>
         </Toolbar>
         <Box sx={{ overflow: "auto" }}>
           <List>

@@ -17,7 +17,7 @@ import {
 
 type GenericTableProps<T extends object> = {
   data: T[];
-  columns: ColumnDef<T, any>[];
+  columns: ColumnDef<T, unknown>[];
 };
 
 export function GenericTable<T extends object>({

@@ -6,7 +6,7 @@ import { queryClient } from "@/lib/configs";
 import { SnackbarProvider } from "notistack";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
-type Props = PropsWithChildren<{}>;
+type Props = PropsWithChildren<Record<string, unknown>>;
 
 const GlobalClientProvider: React.FC<Props> = (props) => {
   return (

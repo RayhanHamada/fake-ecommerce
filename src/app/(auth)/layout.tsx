@@ -20,7 +20,7 @@ export default function Layout(props: Props) {
             fontWeight={700}
             sx={{ color: "#fff" }}
           >
-            Steven's Store
+            Steven&apos;s Store
           </Typography>
         </Toolbar>
       </AppBar>

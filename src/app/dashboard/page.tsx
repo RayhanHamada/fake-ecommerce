@@ -2,9 +2,9 @@
 
 import { Box, Typography } from "@mui/material";
 
-type Props = Readonly<{}>;
+type Props = Readonly<Record<string, unknown>>;
 
-export default function Page() {
+export default function Page(props: Props) {
   return (
     <Box sx={{ p: 2 }}>
       <Typography>Dashboard</Typography>

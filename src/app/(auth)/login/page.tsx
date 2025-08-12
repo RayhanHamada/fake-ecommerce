@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 import LoginForm from "@/features/auth/components/LoginForm";
 import { Fragment } from "react";
 
-type Props = Readonly<{}>;
+type Props = Readonly<Record<string, unknown>>;
 
 export default function Page(_: Props) {
   return (

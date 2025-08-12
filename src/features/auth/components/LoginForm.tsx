@@ -5,9 +5,9 @@ import { Button, Paper, Stack, TextField, Typography } from "@mui/material";
 
 import { Fragment } from "react";
 
-type Props = {};
+type Props = Record<string, unknown>;
 
-const LoginForm: React.FC<Props> = function (props) {
+const LoginForm: React.FC<Props> = function () {
   const {
     form: {
       register: loginFormRegister,
