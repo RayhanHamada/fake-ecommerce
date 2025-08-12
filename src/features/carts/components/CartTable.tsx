@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 import { useQueryState, parseAsIsoDate, parseAsInteger } from "nuqs";
 
 type Props = {
-  onClickDetail(cartId: string): void;
+  onClickDetail(cartId: number): void;
 };
 
 export default function CartTable(props: Props) {
@@ -106,9 +106,7 @@ export default function CartTable(props: Props) {
                       <Button
                         variant="outlined"
                         size="small"
-                        onClick={() =>
-                          props.onClickDetail(String(cart.id ?? ""))
-                        }
+                        onClick={() => props.onClickDetail(cart.id ?? 0)}
                       >
                         Detail
                       </Button>
