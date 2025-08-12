@@ -18,10 +18,10 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { LOCAL_STORAGE_KEYS } from "@/lib/constants";
 
 export default function DashboardDrawer() {
-  const [, setToken] = useLocalStorage(LOCAL_STORAGE_KEYS.TOKEN);
+  const [, setToken] = useLocalStorage(LOCAL_STORAGE_KEYS.TOKEN, "");
 
   function handleLogout() {
-    setToken(null);
+    setToken("");
   }
 
   return (

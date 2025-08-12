@@ -42,7 +42,7 @@ export function useLoginForm() {
         setToken(response.token);
         enqueueSnackbar("Login Successful", { variant: "success" });
 
-        router.replace("/dashboard");
+        router.replace("/dashboard/carts");
       })
       .catch((err) => {
         enqueueSnackbar("Login Failed", { variant: "error" });

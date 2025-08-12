@@ -4,9 +4,7 @@ import { Container } from "@mui/material";
 import LoginForm from "@/features/auth/components/LoginForm";
 import { Fragment } from "react";
 
-type Props = Readonly<Record<string, unknown>>;
-
-export default function Page(_: Props) {
+export default function Page() {
   return (
     <Fragment>
       <Container maxWidth="xs" sx={{ py: { xs: 4, md: 8 } }}>

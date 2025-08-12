@@ -1,4 +1,3 @@
-import page from "@/app/page";
 import { $api } from "@/lib/services";
 import {
   Box,
@@ -33,15 +32,10 @@ export default function CartTable(props: Props) {
 
   const { data: cartDatas } = $api.useQuery("get", "/carts");
   const sortedCartDatas = cartDatas
-    ?.sort((a, b) =>
-      // @ts-expect-error date should exists
-      dayjs(b.date).diff(dayjs(a.date))
-    )
+    ?.sort((a, b) => dayjs(b.date).diff(dayjs(a.date)))
     .filter(
       (cart) =>
-        // @ts-expect-error date should exists
         dayjs(cart.date, "YYYY-MM-DD").isAfter(dateFrom) &&
-        // @ts-expect-error date should exists
         dayjs(cart.date, "YYYY-MM-DD").isBefore(dateTo)
     );
   const totalPages = Math.ceil((sortedCartDatas?.length || 0) / 5);
@@ -112,7 +106,9 @@ export default function CartTable(props: Props) {
                       <Button
                         variant="outlined"
                         size="small"
-                        onClick={() => props.onClickDetail(cart.id)}
+                        onClick={() =>
+                          props.onClickDetail(String(cart.id ?? ""))
+                        }
                       >
                         Detail
                       </Button>
